@@ -19,7 +19,7 @@ exports.tampilsemuamontir = function (req, res) {
 };
 
 //menampilkan semua data montir berdasarkan id
-exports.tampilberdasarkanid = function (req, res) {
+exports.tampilmontirberdasarkanid = function (req, res) {
     let id = req.params.id;
     connection.query('SELECT * FROM t_montir WHERE id_montir = ?', [id],
         function (error, rows, fields) {
@@ -62,19 +62,19 @@ exports.ubahMontir = function (req, res) {
                 response.ok("BERHASIL MENGUBAH DATA MONTIR", res)
             }
         });
-
+    
 };
 
 //Menghapus Data Berdasarkan ID
-exports.hapusMontir = function (req, res) {
+exports.hapusMontir = function(req,res){
     var id_montir = req.body.id_montir;
-    connection.query('DELETE FROM t_montir WHERE id_montir=?', [id_montir],
-        function (error, rows, fields) {
-            if (error) {
-                console.log(error);
-            } else {
-                response.ok("BERHASIL MENGHAPUS DATA MONTIR", res)
-            }
-        });
-
+    connection.query('DELETE FROM t_montir WHERE id_montir=?',[id_montir],
+    function (error, rows, fields) {
+        if (error) {
+            console.log(error);
+        } else {
+            response.ok("BERHASIL MENGHAPUS DATA MONTIR", res)
+        }
+    });
+    
 };

@@ -6,15 +6,15 @@ module.exports = function (app) {
     app.route('/')
         .get(jsonku.index);
 
-    app.route('/tampil')
+    app.route('/tampilsemuamontir')
         .get(jsonku.tampilsemuamontir);
 
-    app.route('/tampil/:id')
-        .get(jsonku.tampilberdasarkanid);
+    app.route('/tampilmontirberdasarkanid/:id')
+        .get(jsonku.tampilmontirberdasarkanid);
     app.route('/tambah')
         .post(jsonku.tambahmontir);
     app.route('/ubah')
         .put(jsonku.ubahMontir);
-    app.route('/hapus')
+        app.route('/hapus')
         .delete(jsonku.hapusMontir);
 }
