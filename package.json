@@ -1,0 +1,24 @@
+{
+  "name": "utsrestapi",
+  "version": "1.0.0",
+  "description": "Ujian Rest API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tansahprayoga/utsrestapi.git"
+  },
+  "keywords": [
+    "rest",
+    "api",
+    "nodejs"
+  ],
+  "author": "tansah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tansahprayoga/utsrestapi/issues"
+  },
+  "homepage": "https://github.com/tansahprayoga/utsrestapi#readme"
+}
