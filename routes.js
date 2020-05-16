@@ -9,12 +9,6 @@ module.exports = function (app) {
     app.route('/tampilsemuamontir')
         .get(jsonku.tampilsemuamontir);
 
-    app.route('/tampilmontirberdasarkanid/:id')
+        app.route('/tampilmontirberdasarkanid/:id')
         .get(jsonku.tampilmontirberdasarkanid);
-    app.route('/tambah')
-        .post(jsonku.tambahmontir);
-    app.route('/ubah')
-        .put(jsonku.ubahMontir);
-        app.route('/hapus')
-        .delete(jsonku.hapusMontir);
 }
