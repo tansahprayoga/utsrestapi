@@ -62,4 +62,19 @@ exports.ubahMontir = function (req, res) {
                 response.ok("BERHASIL MENGUBAH DATA MONTIR", res)
             }
         });
+
+};
+
+//Menghapus Data Berdasarkan ID
+exports.hapusMontir = function (req, res) {
+    var id_montir = req.body.id_montir;
+    connection.query('DELETE FROM t_montir WHERE id_montir=?', [id_montir],
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok("BERHASIL MENGHAPUS DATA MONTIR", res)
+            }
+        });
+
 };
