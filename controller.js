@@ -39,11 +39,27 @@ exports.tambahmontir = function (req, res) {
 
     connection.query('INSERT INTO t_montir(id_montir,Nama_montir,harga_perjam)VALUES(?,?,?)',
         [id_montir, Nama_montir, harga_perjam],
-        function (error, rows, fields){
-            if(error){
+        function (error, rows, fields) {
+            if (error) {
                 console.log(error);
-            }else {
-                response.ok("Berhasil Menambahkan Data!",res)
+            } else {
+                response.ok("Berhasil Menambahkan Data!", res)
+            }
+        });
+};
+
+//Mengubah data berdasarkan ID
+exports.ubahMontir = function (req, res) {
+    var id_montir = req.body.id_montir;
+    var Nama_montir = req.body.Nama_montir;
+    var harga_perjam = req.body.harga_perjam;
+
+    connection.query('UPDATE t_montir SET Nama_montir=?, harga_perjam=? WHERE id_montir=?', [Nama_montir, harga_perjam, id_montir],
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok("BERHASIL MENGUBAH DATA MONTIR", res)
             }
         });
 };
