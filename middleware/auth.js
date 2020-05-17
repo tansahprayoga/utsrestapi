@@ -9,15 +9,14 @@ var ip = require('ip');
 //controller untuk register
 exports.registrasi = function(req,res) {
     var post = {
-        nama_user: req.body.nama_user,
-        email: req.body.email,
-        password: md5(req.body.password),
-        level: req.body.level,
-        
+      nama_user: req.body.nama_user,
+      email: req.body.email,
+      password: md5(req.body.password),
+      level: req.body.level        
     }
 
     var query = "SELECT email FROM ?? WHERE ??=?";
-    var table = ["T_user", "email", post.email];
+    var table = ["t_user", "email", post.email];
 
     query = mysql.format(query,table);
 
@@ -27,7 +26,7 @@ exports.registrasi = function(req,res) {
         }else {
             if(rows.length == 0){
                 var query = "INSERT INTO ?? SET ?";
-                var table = ["T_user"];
+                var table = ["t_user"];
                 query = mysql.format(query, table);
                 connection.query(query, post, function(error, rows){
                     if(error){
